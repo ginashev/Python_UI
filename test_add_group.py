@@ -16,7 +16,7 @@ class TestAddGroup(unittest.TestCase):
         self.login(wd, username="admin", password="secret")
         self.open_groups_page(wd)
         self.create_group(wd, Group(name="group_name", header="group_head", footer="group_foot"))
-        self.rerurn_to_groups_page(wd)
+        self.return_to_groups_page(wd)
         self.logout(wd)
 
     def test_add_empty_group(self):
