@@ -23,10 +23,10 @@ class Contact:
         self.id = id
 
     def __repr__(self):
-        return "$s:$s" % (self.id, self.fName)
+        return "$s:$s:$s" % (self.id, self.fName, self.lName)
 
     def __eq__(self, other):
-        return (self.id is None or other.id is None or self.id == other.id) and self.fName == other.fName
+        return (self.id is None or other.id is None or self.id == other.id) and self.fName == other.fName and self.lName == other.lName
 
     def id_or_max(self):
         if self.id:

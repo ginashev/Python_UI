@@ -86,7 +86,8 @@ class ContactHelper:
         contacts = []
         for element in wd.find_elements_by_name("entry"):
             cells = element.find_elements_by_tag_name("td")
-            first_Name = cells[2].text
+            first_name = cells[2].text
+            last_name = cells[1].text
             id = cells[0].find_element_by_tag_name("input").get_attribute("value")
-            contacts.append(Contact(fName=first_Name, id=id))
+            contacts.append(Contact(fName=first_name, lName=last_name, id=id))
         return contacts
