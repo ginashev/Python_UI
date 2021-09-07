@@ -8,8 +8,8 @@ def test_add_contact(app):
                                email="test@test.com", bDay="1", bMonth="August", bYear="1985", address_2="Address 2",
                                notes="testUser", homepage="test.test.com")
     app.contact.create(contact)
+    assert len(old_contacts) + 1 == app.contact.count()
     new_contacts = app.contact.get_contact_list()
-    assert len(old_contacts) + 1 == len(new_contacts)
     old_contacts.append(contact)
     assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
 
