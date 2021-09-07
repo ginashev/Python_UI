@@ -23,7 +23,7 @@ class Contact:
         self.id = id
 
     def __repr__(self):
-        return "$s:$s:$s" % (self.id, self.fName, self.lName)
+        return "%s:%s:%s" % (self.id, self.fName, self.lName)
 
     def __eq__(self, other):
         return (self.id is None or other.id is None or self.id == other.id) and self.fName == other.fName and self.lName == other.lName

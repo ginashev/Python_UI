@@ -1,6 +1,7 @@
 from selenium.webdriver.support.ui import Select
 from model.contact import Contact
 
+
 class ContactHelper:
     def __init__(self, app):
         self.app = app
@@ -68,6 +69,7 @@ class ContactHelper:
         wd.find_element_by_name("selected[]").click()
         wd.find_element_by_css_selector("[value='Delete']").click()
         wd.switch_to_alert().accept()
+        assert wd.find_element_by_class_name("msgbox").text == "Record successful deleted"
 
     def open_menu_home(self):
         wd = self.app.wd
