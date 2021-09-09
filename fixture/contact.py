@@ -55,7 +55,6 @@ class ContactHelper:
     def modify_contact_by_index(self, index, contact):
         wd = self.app.wd
         self.open_menu_home()
-        # self.select_contact_by_index(index)
         wd.find_elements_by_css_selector("a [title='Edit']")[index].click()
         self.fill_contact_form(contact)
         wd.find_element_by_name("update").click()
