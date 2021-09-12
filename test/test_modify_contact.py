@@ -4,14 +4,12 @@ from random import randrange
 
 def test_modify_first_contact(app):
     if app.contact.count() == 0:
-        app.contact.create(Contact(fName="Fname", lName="Lname", title="Director", company="Test", address_1="Address 1",
-                               hPhone="+38093123123", mPhone="+38093568229",
-                               email="test@test.com", bDay="1", bMonth="August", bYear="1985", address_2="Address 2",
-                               notes="testUser", homepage="test.test.com"))
-    contact = Contact(fName="Fname2", lName="Lname2", title="Director2", company="Test2", address_1="Address 12",
-                                             hPhone="+380931231232", mPhone="+380935682292",
-                                             email="test@test.com2", bDay="12", bMonth="September", bYear="1996", address_2="Address 22",
-                                             notes="testUser2", homepage="test2.test.com")
+        app.contact.create(Contact(firstname="First_name", lastname="Last_name", address="Address_line",
+                                   email="test1@text.com", email2="test2@text.com", email3="test3@text.com",
+                                   homephone="12345", mobilephone="23451", workphone="34512", secondaryphone="45123"))
+    contact = (Contact(firstname="First_name1", lastname="Last_name1", address="Address_line1",
+                                   email="test1@text.com1", email2="test2@text.com1", email3="test3@text.com1",
+                                   homephone="123451", mobilephone="234511", workphone="345121", secondaryphone="451231"))
     old_contacts = app.contact.get_contact_list()
     index = randrange(len(old_contacts))
     contact.id = old_contacts[index].id
