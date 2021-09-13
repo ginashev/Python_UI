@@ -5,7 +5,7 @@ import string
 
 
 def random_string(prefix, maxlen):
-    symbols = string.ascii_letters + string.digits + string.punctuation + " " * 10
+    symbols = string.ascii_letters + string.digits
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 
@@ -15,7 +15,7 @@ def random_digital_for_phone(maxlen):
 
 
 def random_string_for_email(maxlen):
-    nickname = "".join([random.choice(string.ascii_letters + string.digits + string.punctuation) for i in
+    nickname = "".join([random.choice(string.ascii_letters + string.digits) for i in
                         range(random.randrange(maxlen))])
     domain = "".join([random.choice(string.ascii_letters + string.digits + "-") for i in
                       range(random.randrange(maxlen))])
